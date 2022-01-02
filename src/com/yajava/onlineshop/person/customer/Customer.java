@@ -1,0 +1,45 @@
+package com.yajava.onlineshop.person.customer;
+
+import com.yajava.onlineshop.person.Person;
+import com.yajava.onlineshop.shoppingcart.ShoppingCart;
+
+public class Customer extends Person {
+	
+	// Instance variables
+	private int customerNumber;
+	private ShoppingCart shopCart;
+	
+	// Parametrised constructor
+	public Customer(String fName, String lName, String phoneNumber, int customerNumber, ShoppingCart shopCart) {
+		super(fName, lName, phoneNumber);
+		this.customerNumber = customerNumber;
+		this.shopCart = shopCart;
+	}
+	
+	// Getters and setters, since the instance variables are private
+	public int getCustomerNumber() {
+		return customerNumber;
+	}
+
+	public void setCustomerNumber(int customerNumber) {
+		this.customerNumber = customerNumber;
+	}
+	public ShoppingCart getShopCart() {
+		return shopCart;
+	}
+	public void setShopCart(ShoppingCart shopCart) {
+		this.shopCart = shopCart;
+	}
+
+	// toString() for Customer, that calls toString in ShoppingCart and Person
+	@Override
+	public String toString() {
+		return "Customer number: " + customerNumber + "\t\t" + super.toString() + shopCart + "\n";
+	}
+
+
+	
+	
+	
+	
+}
