@@ -3,13 +3,13 @@ package com.yajava.onlineshop.product;
 public class Product {
 
 	// Instance variables
-	private int productNumber;
+	private String productNumber;
 	private String productName;
-	private double netPrice; 
+	private double netPrice;
 	private double vatRate;
-	
-	// Parametrised constructor
-	public Product(int productNumber, String productName, double netPrice, double vatRate) {
+
+	// Parametrised constructor - to create products from
+	public Product(String productNumber, String productName, double netPrice, double vatRate) {
 		super();
 		this.productNumber = productNumber;
 		this.productName = productName;
@@ -18,11 +18,11 @@ public class Product {
 	}
 
 	// Getters and setters, since the instance variables are private
-	public int getProductNumber() {
+	public String getProductNumber() {
 		return productNumber;
 	}
 
-	public void setProductNumber(int productNumber) {
+	public void setProductNumber(String productNumber) {
 		this.productNumber = productNumber;
 	}
 
@@ -52,12 +52,8 @@ public class Product {
 
 	@Override
 	public String toString() {
-		return "Product number: " + productNumber + "\t\tProduct name: " + productName + "\t\tNet price: " + netPrice
-				+ "\t\tVAT rate: " + vatRate + "\n";
-	} 
-	
-	
-	
-	
-	
+		return String.format("%-25s%-25s%-20s%-15s", "Product number: " + productNumber, "Product name: " + productName,
+				"Net price: " + netPrice, "VAT rate: " + vatRate + "\n");
+	}
+
 }

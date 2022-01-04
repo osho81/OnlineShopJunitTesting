@@ -10,14 +10,16 @@ public abstract class Person {
 	// Instance variables
 	private String fName;
 	private String lName;
+	private String address;
 	private String phoneNumber;
 	// emailAddress?
 
-	// Parametrised constructor
-	public Person(String fName, String lName, String phoneNumber) {
+	// Parametrised constructor - used by inheriting child-class
+	public Person(String fName, String lName, String address, String phoneNumber) {
 		super();
 		this.fName = fName; // this keyword needed because parameters has same name as variable
 		this.lName = lName;
+		this.address = address;
 		this.phoneNumber = phoneNumber;
 	}
 	
@@ -36,6 +38,14 @@ public abstract class Person {
 
 	public void setlName(String lName) {
 		this.lName = lName;
+	}
+	
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	public String getPhoneNumber() {

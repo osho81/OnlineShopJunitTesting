@@ -23,8 +23,8 @@ public class ShoppingCart {
 	// Parametrised constructor 2
 	public ShoppingCart() {
 		super();
-		productList = new ArrayList<Product>();
-		// Amounts are initialised as 0
+		productList = new ArrayList<>(); // Or new ArrayList<Products>()
+		// Amount variables are initialised as 0
 	}
 
 	// Getters and setters, since the instance variables are private
@@ -32,6 +32,8 @@ public class ShoppingCart {
 		return productList;
 	}
 
+	
+	// Unnecessary since have addToCart in customer
 	public void setProductList(Product prod) {
 		productList.add(prod); // This setter modifies productList
 		// Update shoppingCart amount when adding products to it
@@ -60,7 +62,7 @@ public class ShoppingCart {
 	// toString(), utilised in customer
 	@Override
 	public String toString() {
-		return "\nShoppingCart:\n" + printProducts() + "\nAmount excl. VAT: " + amountExclVat + "\t\tAmount incl. VAT: "
+		return "\n ShoppingCart:\n" + printProducts() + "\nAmount excl. VAT: " + amountExclVat + "\t\tAmount incl. VAT: "
 				+ amountInclVat;
 	}
 
@@ -68,7 +70,7 @@ public class ShoppingCart {
 	private String printProducts() {
 		String prodStr = "";
 		for (Product p : productList) {
-			prodStr += "" + p; // Concatenating shortcut
+			prodStr += "Prdouct " + (productList.indexOf(p)+1) + ": " + p; 
 		}
 		return prodStr;
 	}

@@ -1,6 +1,7 @@
 package com.yajava.onlineshop.person.customer;
 
 import com.yajava.onlineshop.person.Person;
+import com.yajava.onlineshop.product.Product;
 import com.yajava.onlineshop.shoppingcart.ShoppingCart;
 
 public class Customer extends Person {
@@ -9,9 +10,9 @@ public class Customer extends Person {
 	private int customerNumber;
 	private ShoppingCart shopCart;
 	
-	// Parametrised constructor
-	public Customer(String fName, String lName, String phoneNumber, int customerNumber, ShoppingCart shopCart) {
-		super(fName, lName, phoneNumber);
+	// Parametrised constructor - to create customers from
+	public Customer(String fName, String lName, String address, String phoneNumber, int customerNumber, ShoppingCart shopCart) {
+		super(fName, lName, address, phoneNumber); // Applies superclass' constructor for these parameters
 		this.customerNumber = customerNumber;
 		this.shopCart = shopCart;
 	}
@@ -37,6 +38,11 @@ public class Customer extends Person {
 		return "Customer number: " + customerNumber + "\t\t" + super.toString() + shopCart + "\n";
 	}
 
+	
+	// Non-standard instance method 
+	public void addToCart(Product prod) {
+		getShopCart().setProductList(prod);
+	}
 
 	
 	
