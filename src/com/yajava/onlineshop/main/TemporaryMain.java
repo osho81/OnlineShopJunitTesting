@@ -36,12 +36,7 @@ public class TemporaryMain {
 		
 		// With "hidden logic"; set product to shopCart via customer-method
 		customer7.addToCart(pants);
-		
-		
-		
-		
-		
-		
+	
 		
 		System.out.println(customer7 + "\n" + customer12);
 		

@@ -39,7 +39,7 @@ public class Customer extends Person {
 	}
 
 	
-	// Non-standard instance method 
+	// Non-standard instance method that uses shopCart setter
 	public void addToCart(Product prod) {
 		getShopCart().setProductList(prod);
 	}
