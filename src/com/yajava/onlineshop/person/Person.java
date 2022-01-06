@@ -1,6 +1,5 @@
 package com.yajava.onlineshop.person;
 
-
 /**
  * Superclass to Customer
  */
