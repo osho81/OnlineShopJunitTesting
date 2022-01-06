@@ -20,7 +20,7 @@ public class ShoppingCart {
 		this.amountInclVat = amountInclVat;
 	}
 
-	// Parametrised constructor 2
+	// Parametrised constructor 2; Could be used to re-assign an empty cart
 	public ShoppingCart() {
 		super();
 		productList = new ArrayList<>(); // Or new ArrayList<Products>()
@@ -32,7 +32,6 @@ public class ShoppingCart {
 		return productList;
 	}
 
-	
 	// Unnecessary since have addToCart in customer
 	public void setProductList(Product prod) {
 		productList.add(prod); // This setter modifies productList
