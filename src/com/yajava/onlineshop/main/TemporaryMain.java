@@ -31,12 +31,9 @@ public class TemporaryMain {
 		customer12.setShopCart(shopCart12);
 		
 		// Filling a shopping cart after it is assigned to a customer
-		// Should keep this approach?????? 
 		customer12.getShopCart().setProductList(candy);
 		customer12.getShopCart().setProductList(pants);
-		
-		// With "hidden logic"; set product to shopCart via customer-method
-		customer7.addToCart(pants); // Might remove and use through setShop directly
+
 	
 		
 		System.out.println(customer7 + "\n" + customer12);
