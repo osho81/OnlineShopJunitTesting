@@ -37,7 +37,6 @@ public class Customer extends Person {
 	public String toString() {
 		return "Customer number: " + customerNumber + "\t\t" + super.toString() + shopCart + "\n";
 	}
-
 	
 	// Non-standard instance method that uses shopCart setter
 	public void addToCart(Product prod) {
