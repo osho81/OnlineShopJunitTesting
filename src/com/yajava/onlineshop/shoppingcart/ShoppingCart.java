@@ -2,6 +2,7 @@ package com.yajava.onlineshop.shoppingcart;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import com.yajava.onlineshop.product.Product;
 
@@ -32,10 +33,16 @@ public class ShoppingCart {
 		return productList;
 	}
 
-	// Unnecessary since have addToCart in customer
-	public void setProductList(Product prod) {
-		productList.add(prod); // This setter modifies productList
+	// This setter modifies productList
+	public void setProductList(Product prod, boolean addOrRemove) {
+		if (addOrRemove) {
+			productList.add(prod);
+		} else {
+			productList.remove(prod);
+		}
+
 		// Update shoppingCart amount when adding products to it
+		// Calls pertinent setters for this task
 		setAmountExclVat(prod);
 		setAmountInclVat(prod);
 	}
@@ -46,7 +53,7 @@ public class ShoppingCart {
 
 	public void setAmountExclVat(Product prod) {
 		// Add to current amount: added product * VAT in % (i.e. /100)
-		amountExclVat += (prod.getNetPrice() + (prod.getNetPrice() * (prod.getVatRate()/100)));
+		amountExclVat += (prod.getNetPrice() + (prod.getNetPrice() * (prod.getVatRate() / 100)));
 	}
 
 	public double getAmountInclVat() {
@@ -61,15 +68,19 @@ public class ShoppingCart {
 	// toString(), utilised in customer
 	@Override
 	public String toString() {
-		return "\n ShoppingCart:\n" + printProducts() + "\nAmount excl. VAT: " + amountExclVat + "\t\tAmount incl. VAT: "
-				+ amountInclVat;
+
+		// Format for dots instead of comma for decimals; and only 2 decimals
+		String formattedAmountExcl = String.format(Locale.US, "%.2f", amountExclVat);
+		String formattedAmountIncl = String.format(Locale.US, "%.2f", amountExclVat);
+		return "\n ShoppingCart:\n" + printProducts() + "\nAmount excl. VAT: " + formattedAmountExcl
+				+ "\t\tAmount incl. VAT: " + formattedAmountIncl;
 	}
 
-	// Used in this toString() since it otherwise prints out list in a default manner
+	// Used for toString(), to write out the products in a cleaner manner
 	private String printProducts() {
 		String prodStr = "";
 		for (Product p : productList) {
-			prodStr += "Prdouct " + (productList.indexOf(p)+1) + ": " + p; 
+			prodStr += "Prdouct " + (productList.indexOf(p) + 1) + ": " + p;
 		}
 		return prodStr;
 	}

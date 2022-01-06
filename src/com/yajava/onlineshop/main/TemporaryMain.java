@@ -18,10 +18,15 @@ public class TemporaryMain {
 		ShoppingCart shopCart12 = new ShoppingCart();
 		
 		// Filling shopping cart before it is assigned to a customer
-		shopCart7.setProductList(shoes);
-		shopCart7.setProductList(pants);
-		shopCart7.setProductList(candy);
-		shopCart7.setProductList(candy);
+		shopCart7.setProductList(shoes, true);
+		shopCart7.setProductList(shoes, true);
+		shopCart7.setProductList(shoes, true);
+		shopCart7.setProductList(shoes, true);
+		shopCart7.setProductList(shoes, false);
+		shopCart7.setProductList(shoes, false);
+		shopCart7.setProductList(pants, true);
+		shopCart7.setProductList(candy, true);
+		shopCart7.setProductList(candy, false);
 
 		// Creating and initializating a customer, of whom one is assigned a shopping cart later
 		Customer customer7 = new Customer("Donald", "Duck", "Oslo", "070-7070707", 7, shopCart7);
@@ -31,8 +36,11 @@ public class TemporaryMain {
 		customer12.setShopCart(shopCart12);
 		
 		// Filling a shopping cart after it is assigned to a customer
-		customer12.getShopCart().setProductList(candy);
-		customer12.getShopCart().setProductList(pants);
+		customer12.getShopCart().setProductList(candy, true);
+		customer12.getShopCart().setProductList(pants, true);
+		customer12.getShopCart().setProductList(pants, true);
+		customer12.getShopCart().setProductList(pants, false);
+		customer12.getShopCart().setProductList(shoes, false);
 
 	
 		

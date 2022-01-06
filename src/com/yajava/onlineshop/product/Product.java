@@ -1,5 +1,7 @@
 package com.yajava.onlineshop.product;
 
+import java.util.Locale;
+
 public class Product {
 
 	// Instance variables
@@ -52,8 +54,10 @@ public class Product {
 
 	@Override
 	public String toString() {
+		String formattedVatRate = String.format(Locale.US, "%.2f", vatRate);
+		String formattedNetPrice = String.format(Locale.US, "%.2f", vatRate);
 		return String.format("%-25s%-25s%-20s%-15s", "Product number: " + productNumber, "Product name: " + productName,
-				"Net price: " + netPrice, "VAT rate: " + vatRate + "\n");
+				"Net price: " + formattedNetPrice, "VAT rate: " + formattedVatRate + "%\n");
 	}
 
 }

@@ -1,7 +1,6 @@
 package com.yajava.onlineshop.person.customer;
 
 import com.yajava.onlineshop.person.Person;
-import com.yajava.onlineshop.product.Product;
 import com.yajava.onlineshop.shoppingcart.ShoppingCart;
 
 public class Customer extends Person {
