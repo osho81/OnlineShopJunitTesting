@@ -1,4 +1,6 @@
-package com.yajava.onlineshop.person;
+package com.yajava.onlineshop.customer;
+
+import java.util.Objects;
 
 /**
  * Superclass to Customer
@@ -11,7 +13,6 @@ public abstract class Person {
 	private String lName;
 	private String address;
 	private String phoneNumber;
-	// emailAddress?
 
 	// Parametrised constructor - used by inheriting child-class
 	public Person(String fName, String lName, String address, String phoneNumber) {
@@ -53,6 +54,24 @@ public abstract class Person {
 
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(address, fName, lName, phoneNumber);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Person other = (Person) obj;
+		return Objects.equals(address, other.address) && Objects.equals(fName, other.fName)
+				&& Objects.equals(lName, other.lName) && Objects.equals(phoneNumber, other.phoneNumber);
 	}
 
 	// toString() method, utilised in its child-class Customer

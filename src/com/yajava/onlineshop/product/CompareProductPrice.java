@@ -1,0 +1,23 @@
+package com.yajava.onlineshop.product;
+
+import java.util.Comparator;
+
+/**
+ * Class used for sorting shopping list by product net price
+ * See methods in shoppingCart applying it
+ */
+
+public class CompareProductPrice implements Comparator<Product> {
+
+	@Override
+	public int compare(Product prod1, Product prod2) {
+        if (prod1.getNetPrice() < prod2.getNetPrice()) {
+            return -1;
+        } else if (prod1.getNetPrice() > prod2.getNetPrice()) {
+            return 1;
+        } else {
+            return 0;
+        }
+	}
+
+}
