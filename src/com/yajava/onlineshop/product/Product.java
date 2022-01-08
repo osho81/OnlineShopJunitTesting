@@ -7,13 +7,13 @@ import java.util.Objects;
 public class Product implements Comparable<Product> {
 
 	// Instance variables
-	private String productID;
+	private int productID;
 	private String productName;
 	private double netPrice;
 	private double vatRate;
 
 	// Parametrised constructor - to create products from
-	public Product(String productID, String productName, double netPrice, double vatRate) {
+	public Product(int productID, String productName, double netPrice, double vatRate) {
 		super();
 		this.productID = productID;
 		this.productName = productName;
@@ -22,12 +22,12 @@ public class Product implements Comparable<Product> {
 	}
 
 	// Getters and setters, since the instance variables are private
-	public String getProductNumber() {
+	public int getProductID() {
 		return productID;
 	}
 
-	public void setProductNumber(String productNumber) {
-		this.productID = productNumber;
+	public void setProductID(int productID) {
+		this.productID = productID;
 	}
 
 	public String getProductName() {

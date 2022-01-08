@@ -11,12 +11,12 @@ public class TemporaryMain {
 	public static void main(String[] args) {
 
 		// Creating and initializating products
-		Product shoes = new Product("035", "Shoes", 500, 10);
-		Product pants = new Product("045", "Pants", 300, 15);
-		Product candy = new Product("055", "Candy", 100, 25);
-		Product apple = new Product("065", "Äpple", 100, 25);
-		Product herbtea = new Product("075", "Örtte", 50, 25);
-		Product eel = new Product("075", "Ål", 200, 20);
+		Product shoes = new Product(035, "Shoes", 500, 10);
+		Product pants = new Product(045, "Pants", 300, 15);
+		Product candy = new Product(055, "Candy", 100, 25);
+		Product apple = new Product(065, "Äpple", 100, 25);
+		Product herbtea = new Product(075, "Örtte", 50, 25);
+		Product eel = new Product(075, "Ål", 200, 20);
 
 		// Creating and initializating shopping carts
 		ShoppingCart shopCart1 = new ShoppingCart();
