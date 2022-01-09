@@ -20,18 +20,19 @@ public class Customer extends Person {
 	}
 
 	// Getters and setters, since the instance variables are private
-	public int getCustomerNumber() {
+	public int getCustomerID() {
 		return customerID;
 	}
 
-	public void setCustomerNumber(int customerNumber) {
-		this.customerID = customerNumber;
+	public void setCustomerID(int customerID) {
+		this.customerID = customerID;
 	}
 
 	public ShoppingCart getShopCart() {
 		return shopCart;
 	}
 
+	// Could be used to renew or assign another shopping cart for some reason
 	public void setShopCart(ShoppingCart shopCart) {
 		this.shopCart = shopCart;
 	}
@@ -67,7 +68,7 @@ public class Customer extends Person {
 		shopCart.addToShopList(prod); // Boolean to steer setter action
 	}
 
-	// Method that calls pertinent setter in shopping cart
+	// Method for returning item; only possible if already in shopping cart
 	public void returnItem(Product prod) {
 		if (shopCart.getShopList().contains(prod)) {
 			shopCart.removeFromShopList(prod);
