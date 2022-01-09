@@ -36,8 +36,6 @@ public class Customer extends Person {
 		this.shopCart = shopCart;
 	}
 
-	// Standard methods
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -72,7 +70,7 @@ public class Customer extends Person {
 	// Method that calls pertinent setter in shopping cart
 	public void returnItem(Product prod) {
 		if (shopCart.getShopList().contains(prod)) {
-			shopCart.removeItem(prod); 
+			shopCart.removeItem(prod);
 		} else {
 			System.out.println("Can't remove product. No such product in your cart.");
 		}

@@ -3,7 +3,8 @@ package com.yajava.onlineshop.customer;
 import java.util.Objects;
 
 /**
- * Superclass to Customer
+ * Superclass to Customer; Abstract klass; only inherit from it, not create
+ * object from it
  */
 
 public abstract class Person {
@@ -14,7 +15,7 @@ public abstract class Person {
 	private String address;
 	private String phoneNumber;
 
-	// Parametrised constructor - used by inheriting child-class
+	// Parametrised constructor - used in inheriting child-class Customer
 	public Person(String fName, String lName, String address, String phoneNumber) {
 		super();
 		this.fName = fName; // this keyword needed because parameters has same name as variable
@@ -22,7 +23,7 @@ public abstract class Person {
 		this.address = address;
 		this.phoneNumber = phoneNumber;
 	}
-	
+
 	// Getters and setters, since the instance variables are private
 	public String getfName() {
 		return fName;
@@ -39,7 +40,7 @@ public abstract class Person {
 	public void setlName(String lName) {
 		this.lName = lName;
 	}
-	
+
 	public String getAddress() {
 		return address;
 	}
@@ -55,7 +56,7 @@ public abstract class Person {
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(address, fName, lName, phoneNumber);
@@ -79,8 +80,5 @@ public abstract class Person {
 	public String toString() {
 		return "Name: " + fName + " " + lName + "\t\tPhoneNumber: " + phoneNumber;
 	}
-	
-	
-	
 
 }

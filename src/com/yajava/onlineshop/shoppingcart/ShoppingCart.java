@@ -17,17 +17,10 @@ public class ShoppingCart {
 	private double amountExclVat;
 	private double amountInclVat;
 
-	// Parametrised constructor (WILL PROBABLY DELETE THIS)
-//	public ShoppingCart(List<Product> productList) {
-//		super();
-//		this.productList = productList;
-//	}
-
-	// Parametrised constructor; create shopping cart and assing it a list
+	// Parametrised constructor
 	public ShoppingCart() {
 		super();
-		shopList = new ArrayList<>(); // Or new ArrayList<Products>()
-		// Amount variables are initialised as 0
+		shopList = new ArrayList<>();
 	}
 
 	// Getters and setters, since the instance variables are private
@@ -90,18 +83,18 @@ public class ShoppingCart {
 				&& Objects.equals(shopList, other.shopList);
 	}
 
-	// toString(), utilised in customer
+	// toString()
 	@Override
 	public String toString() {
 
-		// Format for dots instead of comma for decimals; and only 2 decimals
+		// Format for dots instead of comma for decimals (US); and only 2 decimals
 		String formattedAmountExcl = String.format(Locale.US, "%.2f", amountExclVat);
 		String formattedAmountIncl = String.format(Locale.US, "%.2f", amountInclVat);
 		return "\n\nShoppingCart:\n" + printProducts() + "\nAmount excl. VAT: " + formattedAmountExcl
 				+ "\t\tAmount incl. VAT: " + formattedAmountIncl;
 	}
 
-	// Complements toString() standard method, to print products in a clear manner
+	// Complements toString(), prints products cleaner, using Product's toString()
 	private String printProducts() {
 		String prodStr = "";
 		int prodCount = 1;
@@ -111,18 +104,18 @@ public class ShoppingCart {
 		return prodStr;
 	}
 
-	// Calls Comparable's standard method compareTo, to sort by product name
+	// Calls Product class' comparable's compareTo, to sort its Product by name
 	public void shopListByName() {
 		Collections.sort(getShopList());
 	}
 
-	// Calls external comparators for product (list) sorting by price
+	// Calls external comparator for product (list) sorting by price
 	public void shopListByPrice() {
 		CompareProductPrice listByPrice = new CompareProductPrice();
 		Collections.sort(shopList, listByPrice);
 	}
 
-	// Calls external comparators for product (list) sorting by VAT
+	// Calls external comparator for product (list) sorting by VAT
 	public void shopListByVat() {
 		CompareProductVat listByVat = new CompareProductVat();
 		Collections.sort(shopList, listByVat);

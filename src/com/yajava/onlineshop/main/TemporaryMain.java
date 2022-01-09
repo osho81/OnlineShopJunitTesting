@@ -3,6 +3,7 @@ package com.yajava.onlineshop.main;
 import java.util.Collections;
 
 import com.yajava.onlineshop.customer.Customer;
+import com.yajava.onlineshop.customer.Person;
 import com.yajava.onlineshop.product.Product;
 import com.yajava.onlineshop.shoppingcart.ShoppingCart;
 
