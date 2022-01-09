@@ -1,5 +1,9 @@
 package com.yajava.onlineshop.product;
 
+/**
+ * Product class acts as blueprint for creating product objects.
+ */
+
 import java.text.Collator;
 import java.util.Locale;
 import java.util.Objects;

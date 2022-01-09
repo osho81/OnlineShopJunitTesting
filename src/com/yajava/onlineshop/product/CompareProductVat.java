@@ -3,8 +3,8 @@ package com.yajava.onlineshop.product;
 import java.util.Comparator;
 
 /**
- * Class used for sorting shopping list by product VAT
- * See methods in shoppingCart applying it
+ * Class used for sorting shopping list by product VAT.
+ * See methods in shoppingCart applying this external comparator.
  */
 
 public class CompareProductVat implements Comparator<Product> {

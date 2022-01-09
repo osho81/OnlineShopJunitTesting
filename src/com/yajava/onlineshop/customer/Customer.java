@@ -1,5 +1,10 @@
 package com.yajava.onlineshop.customer;
 
+/**
+ * Customer class Inherits from Person.
+ * The class acts as blueprint for creating customer objects.
+ */
+
 import java.util.Objects;
 
 import com.yajava.onlineshop.product.Product;
@@ -57,7 +62,7 @@ public class Customer extends Person {
 		return customerID == other.customerID && Objects.equals(shopCart, other.shopCart);
 	}
 
-	// toString() for Customer, that calls toString in ShoppingCart and Person
+	// toString() for Customer, that also uses Person's & ShoppingCart's toStrings
 	@Override
 	public String toString() {
 		return "Customer number: " + customerID + "\t\t" + super.toString() + shopCart + "\n";

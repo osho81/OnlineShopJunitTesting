@@ -1,5 +1,9 @@
 package com.yajava.onlineshop.shoppingcart;
 
+/**
+ * ShoppingCart class acts as blueprint for creating shopping cart objects.
+ */
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

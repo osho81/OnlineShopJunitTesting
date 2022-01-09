@@ -3,8 +3,8 @@ package com.yajava.onlineshop.product;
 import java.util.Comparator;
 
 /**
- * Class used for sorting shopping list by product net price
- * See methods in shoppingCart applying it
+ * Class used for sorting shopping list by product net price.
+ * See methods in shoppingCart applying this external comparator.
  */
 
 public class CompareProductPrice implements Comparator<Product> {

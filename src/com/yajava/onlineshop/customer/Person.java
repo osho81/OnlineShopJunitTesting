@@ -3,7 +3,7 @@ package com.yajava.onlineshop.customer;
 import java.util.Objects;
 
 /**
- * Superclass to Customer.
+ * Person class is superclass to Customer.
  */
 
 public abstract class Person {
