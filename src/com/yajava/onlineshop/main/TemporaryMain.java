@@ -24,9 +24,9 @@ public class TemporaryMain {
 		ShoppingCart shopCart2 = new ShoppingCart();
 
 		// Filling shopping cart before it is assigned to a customer
-		shopCart1.setShopList(shoes);
-		shopCart1.setShopList(pants);
-		shopCart1.setShopList(candy);
+		shopCart1.addToShopList(shoes);
+		shopCart1.addToShopList(pants);
+		shopCart1.addToShopList(candy);
 
 		// Creating and initializating a customer, of whom one is assigned a shopping
 		// cart later

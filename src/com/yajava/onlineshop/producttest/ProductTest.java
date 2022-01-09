@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import com.yajava.onlineshop.product.Product;
 
 class ProductTest {
-	
+
 	@Test
 	void testSetProductID() {
 
@@ -71,11 +71,8 @@ class ProductTest {
 		Product candy1 = new Product(1001, "Candy", 100, 25);
 		Product candy2 = new Product(1001, "Candy", 100, 25);
 
-		// Act
-		boolean returnedInt = true;
-
 		// Assert
-		assertEquals(returnedInt, candy1.equals(candy2));
+		assertTrue(candy1.equals(candy2));
 	}
 
 	@Test
@@ -85,10 +82,12 @@ class ProductTest {
 		Product candy = new Product(1001, "Candy", 100, 25);
 
 		// Act
-		String expectedString = "Product ID: 1001         Product name: Candy      Net price: 100.00   VAT rate: 25.00%";
+		String expectedString = "Product ID: 1001         Product name: Candy  "
+				+ "Net price: 100.00   VAT rate: 25.00%";
+		expectedString = expectedString.replaceAll("\\s+", "");
 
 		// Assert
-		assertEquals(expectedString, candy.toString());
+		assertEquals(expectedString, candy.toString().replaceAll("\\s+", ""));
 	}
 
 	@Test
@@ -100,12 +99,10 @@ class ProductTest {
 		Product apple = new Product(065, "Äpple", 100, 25);
 
 		// Assert
-		assertEquals(-1, candy1.compareTo(apple),
-				"Meaning that Candy comes before Äpple in the Swedish alphabet");
+		assertEquals(-1, candy1.compareTo(apple), "Meaning that Candy comes before Äpple in the Swedish alphabet");
 		assertEquals(0, candy1.compareTo(candy2),
 				"Meaning that Candy and Candy comes at same place in the Swedish alphabet");
-		assertEquals(1, apple.compareTo(candy1),
-				"Meaning that Apple comes after Candy in the Swedish alphabet");
+		assertEquals(1, apple.compareTo(candy1), "Meaning that Apple comes after Candy in the Swedish alphabet");
 	}
 
 }

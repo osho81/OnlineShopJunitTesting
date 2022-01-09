@@ -64,13 +64,13 @@ public class Customer extends Person {
 
 	// Method for buying an item
 	public void buyItem(Product prod) {
-		shopCart.setShopList(prod); // Boolean to steer setter action
+		shopCart.addToShopList(prod); // Boolean to steer setter action
 	}
 
 	// Method that calls pertinent setter in shopping cart
 	public void returnItem(Product prod) {
 		if (shopCart.getShopList().contains(prod)) {
-			shopCart.removeItem(prod);
+			shopCart.removeFromShopList(prod);
 		} else {
 			System.out.println("Can't remove product. No such product in your cart.");
 		}

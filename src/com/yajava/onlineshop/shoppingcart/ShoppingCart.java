@@ -22,19 +22,10 @@ public class ShoppingCart {
 		super();
 		shopList = new ArrayList<>();
 	}
-
+	
 	// Getters and setters, since the instance variables are private
 	public List<Product> getShopList() {
 		return shopList;
-	}
-
-	// This setter modifies productList; if true add prod, else remove
-	public void setShopList(Product prod) {
-		shopList.add(prod);
-
-		// Update/increase shoppingCart cost accordingly
-		setAmountExclVat(prod);
-		setAmountInclVat(prod);
 	}
 
 	public double getAmountExclVat() {
@@ -55,8 +46,17 @@ public class ShoppingCart {
 		amountInclVat += (prod.getNetPrice() + (prod.getNetPrice() * (prod.getVatRate() / 100)));
 	}
 
+	// Method that adds chosen item to productList
+	public void addToShopList(Product prod) {
+		shopList.add(prod);
+
+		// Update/increase shoppingCart cost accordingly
+		setAmountExclVat(prod);
+		setAmountInclVat(prod);
+	}
+	
 	// Method for removing returned item; called by returnItem() in Customer
-	public void removeItem(Product prod) {
+	public void removeFromShopList(Product prod) {
 		shopList.remove(prod);
 
 		// Update/decrease shoppingCart cost accordingly
