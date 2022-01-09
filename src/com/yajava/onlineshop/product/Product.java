@@ -83,9 +83,9 @@ public class Product implements Comparable<Product> {
 
 	// compareTo() standard method; compares product name order alphabetically
 	public int compareTo(Product otherProd) {
-		
+
 		// Chosen Locale is added to enable Swedish vowels
-		Collator col = Collator.getInstance(new Locale("sv","SE"));
+		Collator col = Collator.getInstance(new Locale("sv", "SE"));
 		col.setStrength(Collator.PRIMARY);
 
 		// Compare current products's name with passed in product's name

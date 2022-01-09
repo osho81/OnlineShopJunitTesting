@@ -22,7 +22,7 @@ public class ShoppingCart {
 		super();
 		shopList = new ArrayList<>();
 	}
-	
+
 	// Getters and setters, since the instance variables are private
 	public List<Product> getShopList() {
 		return shopList;
@@ -54,7 +54,7 @@ public class ShoppingCart {
 		setAmountExclVat(prod);
 		setAmountInclVat(prod);
 	}
-	
+
 	// Method for removing returned item; called by returnItem() in Customer
 	public void removeFromShopList(Product prod) {
 		shopList.remove(prod);

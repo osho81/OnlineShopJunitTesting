@@ -99,8 +99,7 @@ class ShoppingCartTest {
 
 		// Act
 		String expectedString = "ShoppingCart: Product 1: Product ID: 1001 "
-				+ "Product name: Candy      Net price: 100.00  "
-				+ "VAT rate: 25.00% Amount excl. VAT: 100.00 "
+				+ "Product name: Candy      Net price: 100.00  " + "VAT rate: 25.00% Amount excl. VAT: 100.00 "
 				+ "Amount incl. VAT: 125.00";
 		expectedString = expectedString.replaceAll("\\s+", "");
 
@@ -110,6 +109,7 @@ class ShoppingCartTest {
 
 	@Test
 	void testShopListByName() {
+		
 		// Arrange
 		Product candy = new Product(1001, "Candy", 100, 25);
 		Product apple = new Product(065, "Äpple", 200, 10);
@@ -121,26 +121,27 @@ class ShoppingCartTest {
 		shopCart1.shopListByName();
 		Product expectedFirstProduct = candy;
 		Product expectedLastProduct = apple;
-		
+
 		// Assert
 		assertEquals(expectedFirstProduct, shopCart1.getShopList().get(0));
 		assertEquals(expectedLastProduct, shopCart1.getShopList().get(1));
 	}
-	
+
 	@Test
 	void testShopListByPrice() { // External comparator
+
 		// Arrange
 		Product candy = new Product(1001, "Candy", 100, 25);
 		Product apple = new Product(065, "Äpple", 200, 10);
 		ShoppingCart shopCart1 = new ShoppingCart();
-		shopCart1.addToShopList(apple); 
+		shopCart1.addToShopList(apple);
 		shopCart1.addToShopList(candy); // Cheapest
 
 		// Act
 		shopCart1.shopListByPrice();
 		Product expectedFirstProduct = candy;
 		Product expectedLastProduct = apple;
-		
+
 		// Assert
 		assertEquals(expectedFirstProduct, shopCart1.getShopList().get(0));
 		assertEquals(expectedLastProduct, shopCart1.getShopList().get(1));
@@ -148,6 +149,7 @@ class ShoppingCartTest {
 
 	@Test
 	void testShopListByVat() { // External comparator
+
 		// Arrange
 		Product candy = new Product(1001, "Candy", 100, 25);
 		Product apple = new Product(065, "Äpple", 200, 10);
@@ -159,11 +161,10 @@ class ShoppingCartTest {
 		shopCart1.shopListByVat();
 		Product expectedFirstProduct = apple;
 		Product expectedLastProduct = candy;
-		
+
 		// Assert
 		assertEquals(expectedFirstProduct, shopCart1.getShopList().get(0));
 		assertEquals(expectedLastProduct, shopCart1.getShopList().get(1));
 	}
-
 
 }
