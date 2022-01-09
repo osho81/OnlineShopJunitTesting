@@ -3,8 +3,7 @@ package com.yajava.onlineshop.customer;
 import java.util.Objects;
 
 /**
- * Superclass to Customer; Abstract klass; only inherit from it, not create
- * object from it
+ * Superclass to Customer.
  */
 
 public abstract class Person {

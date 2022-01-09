@@ -11,7 +11,7 @@ public class Customer extends Person {
 	private int customerID;
 	private ShoppingCart shopCart;
 
-	// Parametrised constructor - to create customers from
+	// Parametrised constructor - to create customer-objects from
 	public Customer(String fName, String lName, String address, String phoneNumber, int customerID,
 			ShoppingCart shopCart) {
 		super(fName, lName, address, phoneNumber); // Applies superclass' constructor for these parameters
