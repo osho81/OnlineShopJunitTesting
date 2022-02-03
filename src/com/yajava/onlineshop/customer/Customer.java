@@ -70,7 +70,7 @@ public class Customer extends Person {
 
 	// Method for buying an item
 	public void buyItem(Product prod) {
-		shopCart.addToShopList(prod); // Boolean to steer setter action
+		shopCart.addToShopList(prod); 
 	}
 
 	// Method for returning item; only possible if already in shopping cart
